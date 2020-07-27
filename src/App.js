@@ -51,42 +51,44 @@ const DropdownMenu = () => {
       className="dropdown"
       style={{ height: `calc(${menuHeight}px + 2rem)` }}
     >
-      <CSSTransition
-        in={activeMenu === 'main'}
-        unmountOnExit
-        timeout={500}
-        classNames="menu-primary"
-        onEnter={calcHeight}
-      >
-        <div className="menu">
-          <DropdownItem>My Profile</DropdownItem>
-          <DropdownItem
-            leftIcon={<CogIcon />}
-            rightIcon={<ChevronIcon />}
-            goToMenu="settings"
-          >
-            Settings
-          </DropdownItem>
-        </div>
-      </CSSTransition>
+      <div className="transition-group">
+        <CSSTransition
+          in={activeMenu === 'main'}
+          unmountOnExit
+          timeout={500}
+          classNames="menu-primary"
+          onEnter={calcHeight}
+        >
+          <div className="menu">
+            <DropdownItem>My Profile</DropdownItem>
+            <DropdownItem
+              leftIcon={<CogIcon />}
+              rightIcon={<ChevronIcon />}
+              goToMenu="settings"
+            >
+              Settings
+            </DropdownItem>
+          </div>
+        </CSSTransition>
 
-      <CSSTransition
-        in={activeMenu === 'settings'}
-        unmountOnExit
-        timeout={500}
-        classNames="menu-secondary"
-        onEnter={calcHeight}
-      >
-        <div className="menu">
-          <DropdownItem leftIcon={<ArrowIcon />} goToMenu="main" />
-          <DropdownItem>Settings</DropdownItem>
-          <DropdownItem>Settings</DropdownItem>
-          <DropdownItem>Settings</DropdownItem>
-          <DropdownItem>Settings</DropdownItem>
-          <DropdownItem>Settings</DropdownItem>
-          <DropdownItem>Settings</DropdownItem>
-        </div>
-      </CSSTransition>
+        <CSSTransition
+          in={activeMenu === 'settings'}
+          unmountOnExit
+          timeout={500}
+          classNames="menu-secondary"
+          onEnter={calcHeight}
+        >
+          <div className="menu">
+            <DropdownItem leftIcon={<ArrowIcon />} goToMenu="main" />
+            <DropdownItem>Settings</DropdownItem>
+            <DropdownItem>Settings</DropdownItem>
+            <DropdownItem>Settings</DropdownItem>
+            <DropdownItem>Settings</DropdownItem>
+            <DropdownItem>Settings</DropdownItem>
+            <DropdownItem>Settings</DropdownItem>
+          </div>
+        </CSSTransition>
+      </div>
     </div>
   );
 };

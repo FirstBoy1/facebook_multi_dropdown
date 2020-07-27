@@ -98,6 +98,15 @@ a {
   transition: height var(--speed) ease;
 }
 
+.transition-group {
+  position: relative;
+}
+/* 
+.transition-group > * {
+  position: absolute;
+  width: 100%;
+} */
+
 .menu {
   width: 100%;
 }
@@ -153,8 +162,8 @@ a {
   transition: all var(--speed) ease;
 }
 
-.menu-secondary-exit {
-}
+/* .menu-secondary-exit {
+} */
 
 .menu-secondary-exit-active {
   transform: translateX(110%);
